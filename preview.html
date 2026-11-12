@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Block Preview</title>
+<style>
+/* 本番サイトの主要スタイルを再現（プレビュー専用。WYSIWYGには貼らない） */
+*{box-sizing:border-box}
+body{margin:0;background:#fff;font-family:"Hiragino Kaku Gothic ProN","ヒラギノ角ゴ ProN W3",Meiryo,メイリオ,Osaka,"MS PGothic",arial,helvetica,sans-serif;}
+.mock{background:#333;color:#fff;padding:60px 16px;font-size:28px;font-weight:700;text-align:center}
+.holder{max-width:1024px;margin:0 auto}
+.wysiwyg h3{font-size:22px;color:#292727;font-weight:700;margin:0 0 20px;padding:20px 0 10px}
+.wysiwyg p{font-size:16px;line-height:25px;margin:0;padding:0 0 20px;color:#444}
+</style>
+</head>
+<body>
+<div class="mock">（ヘッダー・ヒーロー：システム出力）</div>
+<section class="widgetTextColumns"><div class="holder"><div class="wysiwyg" id="slot"></div></div></section>
+<div class="mock" style="background:#eee;color:#666;font-size:18px">（定例会の詳細・見学するボタン：システム出力）</div>
+<script>fetch('block.html').then(r=>r.text()).then(h=>{document.getElementById('slot').innerHTML=h.replace(/##tyfcb##/g,'641,533')});</script>
+</body>
+</html>
